@@ -1,20 +1,20 @@
 package repository;
 
-import model.Pedido;
+import model.pedidoDTO;
 import java.util.HashMap;
 import java.util.Map;
 
 public class PedidosRepositoryImpl implements PedidosRepository {
-    private final Map<String, Pedido> baseDatos = new HashMap<>();
+    private final Map<String, pedidoDTO> baseDatos = new HashMap<>();
 
     @Override
-    public void guardar(Pedido pedido) {
-        baseDatos.put(pedido.getId(), pedido);
-        System.out.println("💾 Pedido guardado en repositorio: " + pedido.getId());
+    public void guardar(pedidoDTO pedidoDTO) {
+        baseDatos.put(pedidoDTO.getId(), pedidoDTO);
+        System.out.println("💾 Pedido guardado en repositorio: " + pedidoDTO.getId());
     }
 
     @Override
-    public Pedido buscarPorId(String id) {
+    public pedidoDTO buscarPorId(String id) {
         return baseDatos.get(id);
     }
 }

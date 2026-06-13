@@ -1,7 +1,7 @@
 package discount;
 
-import model.Pedido;
+import model.pedidoDTO;
 
 public interface PoliticaDescuento {
-    double aplicarDescuento(Pedido pedido);
+    double aplicarDescuento(pedidoDTO pedidoDTO);
 }

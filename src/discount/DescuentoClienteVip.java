@@ -1,11 +1,11 @@
 package discount;
 
-import model.Pedido;
+import model.pedidoDTO;
 
 public class DescuentoClienteVip implements PoliticaDescuento {
     @Override
-    public double aplicarDescuento(Pedido pedido) {
+    public double aplicarDescuento(pedidoDTO pedidoDTO) {
         // 15% de descuento para clientes VIP
-        return pedido.getValorTotal() * 0.85;
+        return pedidoDTO.getValorTotal() * 0.85;
     }
 }

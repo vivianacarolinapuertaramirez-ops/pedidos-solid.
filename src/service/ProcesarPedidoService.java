@@ -1,7 +1,7 @@
 package service;
 
 import discount.PoliticaDescuento;
-import model.Pedido;
+import model.pedidoDTO;
 import notificacion.NotificadorPedido;
 import repository.PedidosRepository;
 
@@ -22,16 +22,16 @@ public class ProcesarPedidoService implements ProcesarPedidoUseCase {
     }
 
     @Override
-    public void ejecutar(Pedido pedido) {
-        System.out.println("🔄 Procesando pedido: " + pedido.getId());
+    public void ejecutar(pedidoDTO pedidoDTO) {
+        System.out.println("🔄 Procesando pedido: " + pedidoDTO.getId());
 
         // Aplica descuento SIN condicionales (Cumple OCP)
-        double valorFinal = politicaDescuento.aplicarDescuento(pedido);
-        Pedido pedidoProcesado = new Pedido(pedido.getId(), valorFinal, pedido.getTipoCliente());
+        double valorFinal = politicaDescuento.aplicarDescuento(pedidoDTO);
+        pedidoDTO pedidoDTOProcesado = new pedidoDTO(pedidoDTO.getId(), valorFinal, pedidoDTO.getTipoCliente());
 
         // Guarda y notifica
-        repositorio.guardar(pedidoProcesado);
-        notificador.enviarConfirmacion(pedidoProcesado);
+        repositorio.guardar(pedidoDTOProcesado);
+        notificador.enviarConfirmacion(pedidoDTOProcesado);
 
         System.out.println("✅ Proceso finalizado.\n");
     }

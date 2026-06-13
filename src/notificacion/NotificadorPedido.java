@@ -1,7 +1,7 @@
 package notificacion;
 
-import model.Pedido;
+import model.pedidoDTO;
 
 public interface NotificadorPedido {
-    void enviarConfirmacion(Pedido pedido);
+    void enviarConfirmacion(pedidoDTO pedidoDTO);
 }

@@ -1,7 +1,7 @@
 package service;
 
-import model.Pedido;
+import model.pedidoDTO;
 
 public interface ProcesarPedidoUseCase {
-    void ejecutar(Pedido pedido);
+    void ejecutar(pedidoDTO pedidoDTO);
 }

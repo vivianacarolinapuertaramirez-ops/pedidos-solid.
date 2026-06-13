@@ -1,7 +1,7 @@
 import discount.DescuentoClienteRegular;
 import discount.DescuentoClienteVip;
 import discount.PoliticaDescuento;
-import model.Pedido;
+import model.pedidoDTO;
 import notificacion.NotificadorPedido;
 import notificacion.NotificadorPedidoImpl;
 import repository.PedidosRepository;
@@ -18,13 +18,13 @@ public class Main {
         // 2. CASO 1: Cliente REGULAR
         PoliticaDescuento descuentoRegular = new DescuentoClienteRegular();
         ProcesarPedidoUseCase servicioRegular = new ProcesarPedidoService(descuentoRegular, repositorio, notificador);
-        Pedido pedido1 = new Pedido("PED-001", 1000.0, "REGULAR");
-        servicioRegular.ejecutar(pedido1);
+        pedidoDTO pedidoDTO1 = new pedidoDTO("PED-001", 1000.0, "REGULAR");
+        servicioRegular.ejecutar(pedidoDTO1);
 
         // 3. CASO 2: Cliente VIP
         PoliticaDescuento descuentoVip = new DescuentoClienteVip();
         ProcesarPedidoUseCase servicioVip = new ProcesarPedidoService(descuentoVip, repositorio, notificador);
-        Pedido pedido2 = new Pedido("PED-002", 1000.0, "VIP");
-        servicioVip.ejecutar(pedido2);
+        pedidoDTO pedidoDTO2 = new pedidoDTO("PED-002", 1000.0, "VIP");
+        servicioVip.ejecutar(pedidoDTO2);
     }
 }
