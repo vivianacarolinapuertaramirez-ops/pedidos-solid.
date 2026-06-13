@@ -1,4 +1,7 @@
 package service;
 
-public class ProcesarPedidoUseCase {
+import model.Pedido;
+
+public interface ProcesarPedidoUseCase {
+    void ejecutar(Pedido pedido);
 }

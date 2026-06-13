@@ -1,4 +1,7 @@
 package discount;
 
-public class PoliticaDescuento {
+import model.Pedido;
+
+public interface PoliticaDescuento {
+    double aplicarDescuento(Pedido pedido);
 }

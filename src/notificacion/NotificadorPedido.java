@@ -1,4 +1,7 @@
 package notificacion;
 
-public class NotificadorPedido {
+import model.Pedido;
+
+public interface NotificadorPedido {
+    void enviarConfirmacion(Pedido pedido);
 }
